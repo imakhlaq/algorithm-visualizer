@@ -15,8 +15,6 @@ const EachLine = ({ ele, arr }: Props) => {
     w = windowSize.current / arr.length - 30;
   }
 
-  console.log(w);
-
   return (
     <div
       style={{ height: `${h}px`, width: `${w}px` }}

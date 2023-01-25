@@ -47,7 +47,6 @@ const Header = () => {
         () => Math.floor(Math.random() * 10) + 1
       )
     );
-    console.log(ctx.arr);
   };
 
   return (
