@@ -40,6 +40,15 @@ const Header = () => {
   const sizeChangeHandler = (event: FormEvent<HTMLInputElement>) => {
     ctx.setSize(+event.currentTarget.value);
   };
+  const genRandomArray = () => {
+    ctx.setArr(
+      Array.from(
+        { length: Math.floor(Math.random() * 50) + 5 },
+        () => Math.floor(Math.random() * 10) + 1
+      )
+    );
+    console.log(ctx.arr);
+  };
 
   return (
     <header className="flex justify-around mt-9 items-center">
@@ -47,7 +56,7 @@ const Header = () => {
         <h1 className="md:text-4xl text-xl ml-8">Algorithm Visualizer</h1>
       </div>
       <div className="flex space-x-8 justify-around items-center md:text-2xl text-xl font-semibold">
-        <button>Ramdomize Array</button>
+        <button onClick={genRandomArray}>Ramdomize Array</button>
         <div className="space-x-2">
           <label htmlFor="speed">Speed</label>
           <input
