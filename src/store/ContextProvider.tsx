@@ -10,7 +10,7 @@ const ContextProvider = ({ children }: contextProviderProps) => {
   const [speed, setSpeed] = useState(400);
   const [size, setSize] = useState(20);
   const [sortStatus, setSortStatus] = useState(false);
-  const [arr, setArr] = useState<number[]>([2, 4, 6, 4, 6, 9, 1]);
+  const [arr, setArr] = useState<number[]>([2, 4, 6, 4, 6, 9, 1, 6, 3, 8]);
 
   useEffect(() => {
     console.log("dadad");

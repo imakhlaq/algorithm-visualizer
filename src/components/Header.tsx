@@ -3,6 +3,10 @@ import { useContext, useState, MouseEvent, FormEvent } from "react";
 
 const algos = [
   {
+    name: "Selection Sort",
+    id: "1",
+  },
+  {
     name: "Bubble Sort",
     id: "2",
   },
@@ -51,8 +55,9 @@ const Header = () => {
 
   return (
     <header className="flex justify-around mt-9 items-center">
-      <div>
+      <div className="relative">
         <h1 className="md:text-4xl text-xl ml-8">Algorithm Visualizer</h1>
+        <p className="absolute left-52">By Akhlaq Ahmad</p>
       </div>
       <div className="flex space-x-8 justify-around items-center md:text-2xl text-xl font-semibold">
         <button onClick={genRandomArray}>Ramdomize Array</button>
@@ -76,7 +81,7 @@ const Header = () => {
             min="5"
             max="50"
             step="1"
-            defaultValue="20"
+            defaultValue="10"
             onChange={sizeChangeHandler}
           />
         </div>
@@ -84,10 +89,14 @@ const Header = () => {
         <div className="cursor-pointer relative">
           <button onClick={ShowAlgoLists}>{ctx.selectedAlgo} </button>
           {showList && (
-            <div className="absolute top-12 -right-3 bg-white w-full min-w-[12rem] font-normal text-black rounded-sm shadow-lg">
-              <ul className="text-center space-y-3 mt-4">
+            <div className="absolute top-12 -right-3 bg-white w-full min-w-[12rem] font-normal text-black rounded-sm shadow-lg min-h-fit">
+              <ul className="text-center mt-4">
                 {algos.map((algo) => (
-                  <li onClick={changeAlgoHandler} key={algo.id}>
+                  <li
+                    className="mb-4"
+                    onClick={changeAlgoHandler}
+                    key={algo.id}
+                  >
                     {algo.name}
                   </li>
                 ))}

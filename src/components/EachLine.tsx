@@ -10,7 +10,7 @@ const EachLine = ({ ele, arr }: Props) => {
   const windowSize = useRef(window.innerWidth);
   let w;
   if (typeof windowSize.current === "number") {
-    w = windowSize.current / arr.length - 30;
+    w = windowSize.current / arr.length - 28;
   }
 
   return (
