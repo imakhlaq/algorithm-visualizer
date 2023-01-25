@@ -6,7 +6,7 @@ type MyContextType = {
   speed: number;
   setSpeed: (speed: number) => void;
   size: number;
-  setSize: (speed: number) => void;
+  setSize: (size: number) => void;
 };
 
 const MyContext = createContext({} as MyContextType);

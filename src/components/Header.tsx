@@ -35,10 +35,10 @@ const Header = () => {
   };
 
   const speedChangeHandler = (event: FormEvent<HTMLInputElement>) => {
-    console.log(event.currentTarget.value);
+    ctx.setSpeed(+event.currentTarget.value);
   };
   const sizeChangeHandler = (event: FormEvent<HTMLInputElement>) => {
-    console.log(event.currentTarget.value);
+    ctx.setSize(+event.currentTarget.value);
   };
 
   return (
