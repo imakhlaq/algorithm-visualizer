@@ -1,5 +1,5 @@
 import MyContext from "../store/MyContext";
-import { useContext, useState } from "react";
+import { useContext, useState, MouseEvent } from "react";
 
 const algos = [
   {
@@ -8,15 +8,15 @@ const algos = [
   },
   {
     name: "Insertion Sort",
-    id: "2",
+    id: "3",
   },
   {
     name: "Merge Sort",
-    id: "2",
+    id: "4",
   },
   {
     name: "Quick Sort",
-    id: "2",
+    id: "5",
   },
 ];
 
@@ -24,7 +24,14 @@ const Header = () => {
   const [showList, setShowList] = useState(false);
 
   const ctx = useContext(MyContext);
-  console.log(ctx.selectedAlgo);
+
+  const ShowAlgoLists = () => {
+    setShowList((state) => !state);
+  };
+
+  const changeAlgoHandler = (event: MouseEvent<HTMLLIElement>) => {
+    ctx.setSelectedAlgo((event.target as HTMLElement).textContent!);
+  };
 
   return (
     <header className="flex justify-around mt-9 items-center">
@@ -43,14 +50,18 @@ const Header = () => {
         </div>
 
         <div className="cursor-pointer relative">
-          <p>{ctx.selectedAlgo} </p>
-          <div className="absolute top-20 right-2 bg-white w-full px-4 min-w-[15rem]">
-            <ul className="text-center space-y-3">
-              {algos.map((algo) => (
-                <li key={algo.id}>{algo.name}</li>
-              ))}
-            </ul>
-          </div>
+          <button onClick={ShowAlgoLists}>{ctx.selectedAlgo} </button>
+          {showList && (
+            <div className="absolute top-12 -right-3 bg-white w-full min-w-[12rem] font-normal text-black rounded-sm shadow-lg">
+              <ul className="text-center space-y-3 mt-4">
+                {algos.map((algo) => (
+                  <li onClick={changeAlgoHandler} key={algo.id}>
+                    {algo.name}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
         </div>
       </div>
     </header>
