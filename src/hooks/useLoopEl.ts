@@ -6,7 +6,7 @@ const useLoopEl = () => {
 
   return () => {
     return new Promise<void>((resolve) => {
-      setTimeout(resolve, ctx.speed);
+      setTimeout(resolve, ctx.speed / 2);
     });
   };
 };
