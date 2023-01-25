@@ -7,11 +7,12 @@ type contextProviderProps = {
 
 const ContextProvider = ({ children }: contextProviderProps) => {
   const [selectedAlgo, setSelectedAlgo] = useState("Slection Sort");
-  const [speed, setSpeed] = useState(400);
+  const [speed, setSpeed] = useState(100);
   const [size, setSize] = useState(20);
   const [sortStatus, setSortStatus] = useState(false);
   const [arr, setArr] = useState<number[]>([2, 4, 6, 4, 6, 9, 1, 6, 3, 8]);
   const [iPos, setIPos] = useState(0);
+  const [yPos, setYPos] = useState(0);
 
   useEffect(() => {
     setArr(

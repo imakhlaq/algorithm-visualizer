@@ -71,10 +71,10 @@ const Header = () => {
           <input
             type="range"
             id="speed"
-            min="100"
-            max="1000"
+            min="50"
+            max="400"
             step="1"
-            defaultValue="400"
+            defaultValue="100"
             onChange={speedChangeHandler}
           />
         </div>
@@ -86,7 +86,7 @@ const Header = () => {
             min="5"
             max="50"
             step="1"
-            defaultValue="10"
+            defaultValue="20"
             onChange={sizeChangeHandler}
           />
         </div>
