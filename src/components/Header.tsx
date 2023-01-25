@@ -52,6 +52,7 @@ const Header = () => {
         () => Math.floor(Math.random() * 10) + 1
       )
     );
+    ctx.setSortStatus(false);
   };
 
   return (

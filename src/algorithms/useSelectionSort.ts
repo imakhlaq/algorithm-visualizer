@@ -8,11 +8,11 @@ const useSelectionSort = (arr: number[]) => {
   const wait = useLoopEl();
 
   return async () => {
-    for (let i = 0; i < arr.length - 1; i++) {
+    for (let i = 0; i < arr.length; i++) {
       await wait();
       ctx.setIPos(i);
 
-      for (let j = i + 1; j < arr.length; j++) {
+      for (let j = i; j < arr.length; j++) {
         await wait();
 
         if (arr[i] > arr[j]) {

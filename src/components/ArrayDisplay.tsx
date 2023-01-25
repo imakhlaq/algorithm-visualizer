@@ -7,7 +7,7 @@ const Array = () => {
     <section className="container mx-auto flex justify-center mt-[15rem] min-h-[35rem]">
       <div className={`flex items-end space-x-4`}>
         {ctx.arr.map((el, index, array) => (
-          <EachLine key={index} ele={el} arr={array} />
+          <EachLine key={index} index={index} ele={el} arr={array} />
         ))}
       </div>
     </section>
