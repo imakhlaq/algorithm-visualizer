@@ -74,9 +74,9 @@ const Header = () => {
             type="range"
             id="size"
             min="5"
-            max="100"
+            max="50"
             step="1"
-            defaultValue="25"
+            defaultValue="20"
             onChange={sizeChangeHandler}
           />
         </div>

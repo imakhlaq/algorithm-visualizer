@@ -8,18 +8,14 @@ type contextProviderProps = {
 const ContextProvider = ({ children }: contextProviderProps) => {
   const [selectedAlgo, setSelectedAlgo] = useState("Slection Sort");
   const [speed, setSpeed] = useState(400);
-  const [size, setSize] = useState(25);
+  const [size, setSize] = useState(20);
   const [sortStatus, setSortStatus] = useState(false);
   const [arr, setArr] = useState<number[]>([2, 4, 6, 4, 6, 9, 1]);
 
   useEffect(() => {
     console.log("dadad");
-
     setArr(
-      Array.from(
-        { length: Math.floor(Math.random() * 50) + 5 },
-        () => Math.floor(Math.random() * 10) + 1
-      )
+      Array.from({ length: size }, () => Math.floor(Math.random() * 10) + 1)
     );
   }, [size]);
 
