@@ -1,5 +1,5 @@
 import MyContext from "../store/MyContext";
-import { useContext, useState, MouseEvent } from "react";
+import { useContext, useState, MouseEvent, FormEvent } from "react";
 
 const algos = [
   {
@@ -31,22 +31,46 @@ const Header = () => {
 
   const changeAlgoHandler = (event: MouseEvent<HTMLLIElement>) => {
     ctx.setSelectedAlgo((event.target as HTMLElement).textContent!);
+    setShowList((state) => !state);
+  };
+
+  const speedChangeHandler = (event: FormEvent<HTMLInputElement>) => {
+    console.log(event.currentTarget.value);
+  };
+  const sizeChangeHandler = (event: FormEvent<HTMLInputElement>) => {
+    console.log(event.currentTarget.value);
   };
 
   return (
     <header className="flex justify-around mt-9 items-center">
       <div>
-        <h1 className="text-4xl ml-8">Algorithm Visualizer</h1>
+        <h1 className="md:text-4xl text-xl ml-8">Algorithm Visualizer</h1>
       </div>
-      <div className="flex space-x-8 justify-around items-center text-2xl font-semibold">
+      <div className="flex space-x-8 justify-around items-center md:text-2xl text-xl font-semibold">
         <button>Ramdomize Array</button>
         <div className="space-x-2">
           <label htmlFor="speed">Speed</label>
-          <input type="range" id="speed" />
+          <input
+            type="range"
+            id="speed"
+            min="100"
+            max="1000"
+            step="1"
+            defaultValue="400"
+            onChange={speedChangeHandler}
+          />
         </div>
         <div className="space-x-2">
-          <label htmlFor="speed">Size</label>
-          <input type="range" id="speed" />
+          <label htmlFor="size">Size</label>
+          <input
+            type="range"
+            id="size"
+            min="5"
+            max="100"
+            step="1"
+            defaultValue="25"
+            onChange={sizeChangeHandler}
+          />
         </div>
 
         <div className="cursor-pointer relative">
