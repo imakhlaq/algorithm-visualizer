@@ -1,4 +1,6 @@
-import { useRef } from "react";
+import { useRef, useContext } from "react";
+import MyContext from "../store/MyContext";
+
 type Props = {
   ele: number;
   arr: number[];
@@ -6,6 +8,7 @@ type Props = {
 
 const EachLine = ({ ele, arr }: Props) => {
   const h = ele * 50;
+  const ctx = useContext(MyContext);
 
   const windowSize = useRef(window.innerWidth);
   let w;
@@ -15,8 +18,12 @@ const EachLine = ({ ele, arr }: Props) => {
 
   return (
     <div
-      style={{ height: `${h}px`, width: `${w}px` }}
-      className={` bg-[#c0c0c0] rounded-t-md`}
+      style={{
+        height: `${h}px`,
+        width: `${w}px`,
+        backgroundColor: ctx.sortStatus ? "#F55050" : "#c0c0c0",
+      }}
+      className={`rounded-t-md`}
     ></div>
   );
 };
