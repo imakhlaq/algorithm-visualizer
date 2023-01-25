@@ -60,7 +60,12 @@ const Header = () => {
         <p className="absolute left-52">By Akhlaq Ahmad</p>
       </div>
       <div className="flex space-x-8 justify-around items-center md:text-2xl text-xl font-semibold">
-        <button onClick={genRandomArray}>Ramdomize Array</button>
+        <button
+          onClick={genRandomArray}
+          className="p-2 rounded-md text-white hover:bg-white hover:border-black hover:text-black hover:shadow-xl hover:-translate-y-2 transition-all font-semibold tracking-widest"
+        >
+          Ramdomize Array
+        </button>
         <div className="space-x-2">
           <label htmlFor="speed">Speed</label>
           <input
@@ -87,7 +92,12 @@ const Header = () => {
         </div>
 
         <div className="cursor-pointer relative">
-          <button onClick={ShowAlgoLists}>{ctx.selectedAlgo} </button>
+          <button
+            onClick={ShowAlgoLists}
+            className="py-2 rounded-md text-white hover:bg-white hover:border-black hover:text-black hover:shadow-xl hover:-translate-y-2 transition-all font-semibold tracking-widest"
+          >
+            {ctx.selectedAlgo}{" "}
+          </button>
           {showList && (
             <div className="absolute top-12 -right-3 bg-white w-full min-w-[12rem] font-normal text-black rounded-sm shadow-lg min-h-fit">
               <ul className="text-center mt-4">
