@@ -40,6 +40,7 @@ const Header = () => {
 
   const speedChangeHandler = (event: FormEvent<HTMLInputElement>) => {
     ctx.setSpeed(+event.currentTarget.value);
+    console.log(event.currentTarget.value);
   };
   const sizeChangeHandler = (event: FormEvent<HTMLInputElement>) => {
     ctx.setSize(+event.currentTarget.value);
@@ -72,7 +73,7 @@ const Header = () => {
             type="range"
             id="speed"
             min="50"
-            max="400"
+            max="500"
             step="1"
             defaultValue="100"
             onChange={speedChangeHandler}
