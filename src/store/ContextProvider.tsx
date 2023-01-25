@@ -13,7 +13,6 @@ const ContextProvider = ({ children }: contextProviderProps) => {
   const [arr, setArr] = useState<number[]>([2, 4, 6, 4, 6, 9, 1, 6, 3, 8]);
 
   useEffect(() => {
-    console.log("dadad");
     setArr(
       Array.from({ length: size }, () => Math.floor(Math.random() * 10) + 1)
     );
