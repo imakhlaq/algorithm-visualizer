@@ -7,6 +7,10 @@ type MyContextType = {
   setSpeed: (speed: number) => void;
   size: number;
   setSize: (size: number) => void;
+  sortStatus: boolean;
+  setSortStatus: (setStatus: boolean) => void;
+  arr: number[];
+  setArr: (arr: number[]) => void;
 };
 
 const MyContext = createContext({} as MyContextType);
