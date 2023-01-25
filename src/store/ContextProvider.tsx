@@ -33,6 +33,8 @@ const ContextProvider = ({ children }: contextProviderProps) => {
     setArr,
     iPos,
     setIPos,
+    yPos,
+    setYPos,
   };
 
   return <MyContext.Provider value={value}>{children}</MyContext.Provider>;

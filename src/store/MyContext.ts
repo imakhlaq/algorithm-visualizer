@@ -13,6 +13,8 @@ type MyContextType = {
   setArr: (arr: number[]) => void;
   iPos: number;
   setIPos: (pos: number) => void;
+  yPos: number;
+  setYPos: (pos: number) => void;
 };
 
 const MyContext = createContext({} as MyContextType);
