@@ -7,8 +7,12 @@ const SortingBtn = () => {
   const slectionSort = useSelectionSort(ctx.arr);
 
   const clickHandler = () => {
-    ctx.setSortStatus(true);
-    slectionSort();
+    const updating = async () => {
+      ctx.setSortStatus(true);
+      await slectionSort();
+      ctx.setSortStatus(false);
+    };
+    updating();
   };
 
   return (
