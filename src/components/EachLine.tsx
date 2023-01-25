@@ -9,7 +9,7 @@ const EachLine = ({ ele, arr }: Props) => {
   return (
     <div
       style={{ height: `${h}px` }}
-      className={`w-[40px] bg-[#9B9D9E] rounded-t-md`}
+      className={`w-[40px] bg-[#c0c0c0] rounded-t-md`}
     ></div>
   );
 };
