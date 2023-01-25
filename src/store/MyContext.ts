@@ -11,6 +11,8 @@ type MyContextType = {
   setSortStatus: (setStatus: boolean) => void;
   arr: number[];
   setArr: (arr: number[]) => void;
+  iPos: number;
+  setIPos: (pos: number) => void;
 };
 
 const MyContext = createContext({} as MyContextType);

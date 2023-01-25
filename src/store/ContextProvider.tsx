@@ -11,6 +11,7 @@ const ContextProvider = ({ children }: contextProviderProps) => {
   const [size, setSize] = useState(20);
   const [sortStatus, setSortStatus] = useState(false);
   const [arr, setArr] = useState<number[]>([2, 4, 6, 4, 6, 9, 1, 6, 3, 8]);
+  const [iPos, setIPos] = useState(0);
 
   useEffect(() => {
     setArr(
@@ -29,6 +30,8 @@ const ContextProvider = ({ children }: contextProviderProps) => {
     setSortStatus,
     arr,
     setArr,
+    iPos,
+    setIPos,
   };
 
   return <MyContext.Provider value={value}>{children}</MyContext.Provider>;
