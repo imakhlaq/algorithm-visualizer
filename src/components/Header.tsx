@@ -1,6 +1,24 @@
 import MyContext from "../store/MyContext";
 import { useContext, useState } from "react";
 
+
+const algos=[{
+  name:"Bubble Sort",
+  id:"2"
+},
+{
+  name:"Insertion Sort",
+  id:"2"
+},
+{
+  name:"Merge Sort",
+  id:"2"
+},
+{
+  name:"Quick Sort",
+  id:"2"
+}]
+
 const Header = () => {
   const [showList, setShowList] = useState(false);
 
@@ -25,8 +43,8 @@ const Header = () => {
 
         <div className="cursor-pointer relative">
           <p>{ctx.selectedAlgo} </p>
-          <div className="absolute top-20 right-8">
-            <ul>
+          <div className="absolute top-20 right-2 bg-white w-full px-4 min-w-[15rem]">
+          <ul className="text-center space-y-3">
               <li>Bubble Sort</li>
               <li>Insertion Sort</li>
               <li>Merge Sort</li>
