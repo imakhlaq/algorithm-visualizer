@@ -1,16 +1,30 @@
 import { useContext } from "react";
 import MyContext from "../store/MyContext";
 import useSelectionSort from "../algorithms/useSelectionSort";
+import useBubbleSort from "../algorithms/useBubbleSort";
+import useInsertionSort from "../algorithms/useInsertionSort";
 
 const SortingBtn = () => {
   const ctx = useContext(MyContext);
   const slectionSort = useSelectionSort(ctx.arr);
+  const bubbleSort = useBubbleSort(ctx.arr);
+  const insertionSort = useInsertionSort(ctx.arr);
 
   const clickHandler = () => {
     const updating = async () => {
       ctx.setBgColor("#F55050");
       ctx.setSortStatus(true);
-      await slectionSort();
+
+      if (ctx.selectedAlgo === "Selection Sort") {
+        await slectionSort();
+      }
+      if (ctx.selectedAlgo === "Bubble Sort") {
+        await bubbleSort();
+      }
+      if (ctx.selectedAlgo === "Insertion Sort") {
+        await insertionSort();
+      }
+
       ctx.setSortStatus(false);
       ctx.setBgColor("#68B984");
     };
