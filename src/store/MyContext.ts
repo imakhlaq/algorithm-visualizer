@@ -17,6 +17,7 @@ type MyContextType = {
   setYPos: (pos: number) => void;
   bgColor: string;
   setBgColor: (color: string) => void;
+  getCurrSpeed:()=>number;
 };
 
 const MyContext = createContext({} as MyContextType);

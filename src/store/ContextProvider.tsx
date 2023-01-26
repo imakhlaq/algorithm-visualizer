@@ -21,6 +21,8 @@ const ContextProvider = ({ children }: contextProviderProps) => {
     );
   }, [size]);
 
+  const getCurrSpeed = () => speed;
+
   const value = {
     selectedAlgo,
     setSelectedAlgo,
@@ -38,6 +40,7 @@ const ContextProvider = ({ children }: contextProviderProps) => {
     setYPos,
     bgColor,
     setBgColor,
+    getCurrSpeed,
   };
 
   return <MyContext.Provider value={value}>{children}</MyContext.Provider>;
