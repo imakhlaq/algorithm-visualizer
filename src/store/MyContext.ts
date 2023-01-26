@@ -17,8 +17,8 @@ type MyContextType = {
   setYPos: (pos: number) => void;
   bgColor: string;
   setBgColor: (color: string) => void;
-  swapEl: number | null;
-  setSwapEl: (el: number | null) => void;
+  sotedEl: number | null;
+  setSortedEl: (sotedEl: number | null) => void;
 };
 
 const MyContext = createContext({} as MyContextType);

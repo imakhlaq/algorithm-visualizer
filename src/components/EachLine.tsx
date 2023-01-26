@@ -20,11 +20,7 @@ const EachLine = ({ ind, ele, arr }: Props) => {
 
   let color = ctx.bgColor;
 
-  console.log(ctx.swapEl);
-  if (ctx.swapEl === ind) {
-    console.log(ctx.swapEl);
-    color = "#68B984";
-  } else if (ctx.yPos == ind && ctx.yPos !== 0) {
+  if (ctx.yPos == ind && ctx.yPos !== 0) {
     color = "#FFD384";
   }
 
