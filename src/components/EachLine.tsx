@@ -2,11 +2,12 @@ import { useRef, useContext } from "react";
 import MyContext from "../store/MyContext";
 
 type Props = {
+  ind: number;
   ele: number;
   arr: number[];
 };
 
-const EachLine = ({ ele, arr }: Props) => {
+const EachLine = ({ ind, ele, arr }: Props) => {
   const h = ele * 50;
   const ctx = useContext(MyContext);
 
@@ -16,12 +17,17 @@ const EachLine = ({ ele, arr }: Props) => {
     w = windowSize.current / arr.length - 28;
   }
 
+  let color = ctx.bgColor;
+  if (ctx.yPos - 1 == ind) {
+    color = "#FFD384";
+  }
+
   return (
     <div
       style={{
         height: `${h}px`,
         width: `${w}px`,
-        backgroundColor: ctx.bgColor,
+        backgroundColor: color,
       }}
       className={`rounded-md`}
     ></div>

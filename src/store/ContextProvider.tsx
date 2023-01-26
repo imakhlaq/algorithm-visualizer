@@ -6,7 +6,7 @@ type contextProviderProps = {
 };
 
 const ContextProvider = ({ children }: contextProviderProps) => {
-  const [selectedAlgo, setSelectedAlgo] = useState("Slection Sort");
+  const [selectedAlgo, setSelectedAlgo] = useState("Selection Sort");
   const [speed, setSpeed] = useState(20);
   const [size, setSize] = useState(20);
   const [sortStatus, setSortStatus] = useState(false);
