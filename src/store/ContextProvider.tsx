@@ -21,6 +21,7 @@ const ContextProvider = ({ children }: contextProviderProps) => {
     );
   }, [size]);
 
+
   const getCurrSpeed = () => speed;
 
   const value = {

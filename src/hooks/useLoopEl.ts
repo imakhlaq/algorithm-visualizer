@@ -6,6 +6,7 @@ const useLoopEl = () => {
 
   return () => {
     const speed = ctx.getCurrSpeed();
+    
 
     return new Promise<void>((resolve) => {
       setTimeout(resolve, ctx.speed / 2);

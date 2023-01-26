@@ -14,9 +14,9 @@ const useBubbleSort = (arr: number[]) => {
 
       for (let j = 0; j < arr.length - i - 1; j++) {
         await wait();
+        ctx.setYPos(j);
 
         if (arr[j + 1] < arr[j]) {
-          ctx.setYPos(j);
           let temp = arr[j + 1];
           arr[j + 1] = arr[j];
           arr[j] = temp;

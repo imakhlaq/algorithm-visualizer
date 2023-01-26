@@ -14,9 +14,9 @@ const useSelectionSort = (arr: number[]) => {
 
       for (let j = i; j < arr.length; j++) {
         await wait();
+        ctx.setYPos(j);
 
         if (arr[i] > arr[j]) {
-          ctx.setYPos(j);
           let temp = arr[i];
           arr[i] = arr[j];
           arr[j] = temp;

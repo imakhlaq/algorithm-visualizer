@@ -1,4 +1,4 @@
-import { useRef, useContext, useState, useEffect } from "react";
+import { useRef, useContext } from "react";
 import MyContext from "../store/MyContext";
 
 type Props = {

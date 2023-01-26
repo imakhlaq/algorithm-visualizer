@@ -14,9 +14,8 @@ const useInsertionSort = (arr: number[]) => {
 
       for (let j = i; j >= 0; j--) {
         await wait();
-
+        ctx.setYPos(j);
         if (arr[j + 1] < arr[j]) {
-          ctx.setYPos(j);
           let temp = arr[j + 1];
           arr[j + 1] = arr[j];
           arr[j] = temp;
