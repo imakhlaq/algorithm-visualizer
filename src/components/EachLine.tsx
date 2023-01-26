@@ -1,4 +1,4 @@
-import { useRef, useContext } from "react";
+import { useRef, useContext, useState, useEffect } from "react";
 import MyContext from "../store/MyContext";
 
 type Props = {
@@ -8,8 +8,9 @@ type Props = {
 };
 
 const EachLine = ({ ind, ele, arr }: Props) => {
-  const h = ele * 50;
   const ctx = useContext(MyContext);
+
+  const h = ele * 50;
 
   const windowSize = useRef(window.innerWidth);
   let w;
