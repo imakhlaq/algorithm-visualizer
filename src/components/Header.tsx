@@ -1,5 +1,6 @@
 import MyContext from "../store/MyContext";
 import { useContext, useState, MouseEvent, FormEvent } from "react";
+import { HiOutlineChevronUp, HiOutlineChevronDown } from "react-icons/hi";
 
 const algos = [
   {
@@ -98,12 +99,13 @@ const Header = () => {
         <div className="cursor-pointer relative">
           <button
             onClick={ShowAlgoLists}
-            className="py-2 rounded-md text-white hover:bg-white hover:border-black hover:text-black hover:shadow-xl hover:-translate-y-2 transition-all font-semibold tracking-widest"
+            className="py-2 rounded-md text-white hover:bg-white hover:border-black hover:text-black hover:shadow-xl hover:-translate-y-2 transition-all font-semibold tracking-widest flex gap-3 justify-center items-center"
           >
             {ctx.selectedAlgo}{" "}
+            {showList ? <HiOutlineChevronUp /> : <HiOutlineChevronDown />}
           </button>
           {showList && (
-            <div className="absolute top-12 -right-3 bg-white w-full min-w-[12rem] font-normal text-black rounded-sm shadow-lg min-h-fit">
+            <div className="absolute top-12 -right-0 bg-white w-full min-w-[12rem] font-normal text-black rounded-sm shadow-lg min-h-fit">
               <ul className="text-center mt-4">
                 {algos.map((algo) => (
                   <li
