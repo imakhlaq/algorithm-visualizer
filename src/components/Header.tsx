@@ -43,9 +43,11 @@ const Header = () => {
     console.log(event.currentTarget.value);
   };
   const sizeChangeHandler = (event: FormEvent<HTMLInputElement>) => {
+    ctx.setBgColor("#c0c0c0");
     ctx.setSize(+event.currentTarget.value);
   };
   const genRandomArray = () => {
+    ctx.setBgColor("#c0c0c0");
     ctx.setArr(
       Array.from(
         { length: Math.floor(Math.random() * 50) + 5 },
@@ -88,6 +90,7 @@ const Header = () => {
             min="5"
             max="50"
             step="1"
+            disabled={ctx.sortStatus}
             defaultValue="20"
             onChange={sizeChangeHandler}
           />

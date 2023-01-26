@@ -12,6 +12,7 @@ const SortingBtn = () => {
       ctx.setSortStatus(true);
       await slectionSort();
       ctx.setSortStatus(false);
+      ctx.setBgColor("#68B984");
     };
     updating();
   };
