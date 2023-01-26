@@ -17,6 +17,7 @@ const useBubbleSort = (arr: number[]) => {
         ctx.setYPos(j);
 
         if (arr[j + 1] < arr[j]) {
+          ctx.setSwapEl(j + 1);
           let temp = arr[j + 1];
           arr[j + 1] = arr[j];
           arr[j] = temp;

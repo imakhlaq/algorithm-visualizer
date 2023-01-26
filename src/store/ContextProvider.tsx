@@ -14,6 +14,7 @@ const ContextProvider = ({ children }: contextProviderProps) => {
   const [iPos, setIPos] = useState(0);
   const [yPos, setYPos] = useState(0);
   const [bgColor, setBgColor] = useState("#c0c0c0");
+  const [swapEl, setSwapEl] = useState<number | null>(null);
 
   useEffect(() => {
     setArr(
@@ -21,8 +22,9 @@ const ContextProvider = ({ children }: contextProviderProps) => {
     );
   }, [size]);
 
-
-  const getCurrSpeed = () => speed;
+  useEffect(() => {
+    console.log(swapEl);
+  }, [swapEl]);
 
   const value = {
     selectedAlgo,
@@ -41,7 +43,8 @@ const ContextProvider = ({ children }: contextProviderProps) => {
     setYPos,
     bgColor,
     setBgColor,
-    getCurrSpeed,
+    swapEl,
+    setSwapEl,
   };
 
   return <MyContext.Provider value={value}>{children}</MyContext.Provider>;
