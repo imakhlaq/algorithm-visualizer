@@ -20,7 +20,7 @@ const EachLine = ({ ind, ele, arr }: Props) => {
 
   let color = ctx.bgColor;
 
-  if (ctx.yPos == ind && ctx.yPos !== 0) {
+  if (ctx.yPos + 1 == ind && ctx.yPos !== 0) {
     color = "#FFD384";
   }
 
