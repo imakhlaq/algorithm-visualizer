@@ -29,6 +29,7 @@ const SortingBtn = () => {
       ctx.setBgColor("#68B984");
       ctx.setIPos(0);
       ctx.setYPos(0);
+      ctx.setSwapEl(null);
     };
     updating();
   };

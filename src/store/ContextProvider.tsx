@@ -14,7 +14,7 @@ const ContextProvider = ({ children }: contextProviderProps) => {
   const [iPos, setIPos] = useState(0);
   const [yPos, setYPos] = useState(0);
   const [bgColor, setBgColor] = useState("#c0c0c0");
-  const [swapEl, setSwapEl] = useState<number | null>(null);
+  const [swapEl, setSwapEl] = useState<number | null >(null);
 
   useEffect(() => {
     setArr(
