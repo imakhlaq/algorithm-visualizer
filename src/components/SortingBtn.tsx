@@ -8,6 +8,7 @@ const SortingBtn = () => {
 
   const clickHandler = () => {
     const updating = async () => {
+      ctx.setBgColor("#F55050");
       ctx.setSortStatus(true);
       await slectionSort();
       ctx.setSortStatus(false);

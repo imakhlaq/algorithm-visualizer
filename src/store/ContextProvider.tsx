@@ -13,6 +13,7 @@ const ContextProvider = ({ children }: contextProviderProps) => {
   const [arr, setArr] = useState<number[]>([2, 4, 6, 4, 6, 9, 1, 6, 3, 8]);
   const [iPos, setIPos] = useState(0);
   const [yPos, setYPos] = useState(0);
+  const [bgColor, setBgColor] = useState("#c0c0c0");
 
   useEffect(() => {
     setArr(
@@ -35,6 +36,8 @@ const ContextProvider = ({ children }: contextProviderProps) => {
     setIPos,
     yPos,
     setYPos,
+    bgColor,
+    setBgColor,
   };
 
   return <MyContext.Provider value={value}>{children}</MyContext.Provider>;

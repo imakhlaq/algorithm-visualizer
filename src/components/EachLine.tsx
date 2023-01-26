@@ -1,4 +1,4 @@
-import { useRef, useContext } from "react";
+import { useRef, useContext, useEffect } from "react";
 import MyContext from "../store/MyContext";
 
 type Props = {
@@ -7,19 +7,20 @@ type Props = {
   index: number;
 };
 
-const colorOfBar = (
-  iPos: number,
-  yPos: number,
-  sortedStatus: boolean,
-  index: number
-) => {
+const colorOfBar = (iPos: number, yPos: number, index: number) => {
+  if (yPos === index) {
+    return "#FFD372";
+  }
   if (index < iPos) {
     return "#FFD372";
   }
-  if (yPos === index) {
-    return "#FFD372";
-  } else {
+};
+
+const initialBarColor = (sortingStatus: boolean) => {
+  if (sortingStatus) {
     return "#F55050";
+  } else {
+    return "#c0c0c0";
   }
 };
 
@@ -34,13 +35,15 @@ const EachLine = ({ ele, index, arr }: Props) => {
   }
 
   const { iPos, yPos, sortStatus } = ctx;
-  const value = colorOfBar(iPos, yPos, sortStatus, index);
+
+  const value = colorOfBar(iPos, yPos, index);
+  const color = initialBarColor(sortStatus);
   return (
     <div
       style={{
         height: `${h}px`,
         width: `${w}px`,
-        backgroundColor: ctx.sortStatus ? value : "#c0c0c0",
+        backgroundColor: ctx.bgColor,
       }}
       className={`rounded-md`}
     ></div>

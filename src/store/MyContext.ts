@@ -15,6 +15,8 @@ type MyContextType = {
   setIPos: (pos: number) => void;
   yPos: number;
   setYPos: (pos: number) => void;
+  bgColor: string;
+  setBgColor: (color: string) => void;
 };
 
 const MyContext = createContext({} as MyContextType);
