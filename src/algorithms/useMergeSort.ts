@@ -19,8 +19,10 @@ const useMergeSort = () => {
 
     while (i < mid && j < hi) {
       if (a[i] < a[j]) {
+        ctx.setIPos(i);
         sorted.push(a[i++]);
       } else {
+        ctx.setIPos(j);
         sorted.push(a[j++]);
       }
     }
