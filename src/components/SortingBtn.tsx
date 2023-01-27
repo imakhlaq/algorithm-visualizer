@@ -4,6 +4,7 @@ import useSelectionSort from "../algorithms/useSelectionSort";
 import useBubbleSort from "../algorithms/useBubbleSort";
 import useInsertionSort from "../algorithms/useInsertionSort";
 import useMergeSort from "../algorithms/useMergeSort";
+import useQuickSort from "../algorithms/useQuickSort";
 
 const SortingBtn = () => {
   const ctx = useContext(MyContext);
@@ -11,6 +12,7 @@ const SortingBtn = () => {
   const bubbleSort = useBubbleSort(ctx.arr);
   const insertionSort = useInsertionSort(ctx.arr);
   const mergeSort = useMergeSort();
+  const quickSort = useQuickSort();
 
   const clickHandler = () => {
     const updating = async () => {
@@ -28,6 +30,9 @@ const SortingBtn = () => {
       }
       if (ctx.selectedAlgo === "Merge Sort") {
         await mergeSort(ctx.arr, 0, ctx.arr.length);
+      }
+      if (ctx.selectedAlgo === "Quick Sort") {
+        await quickSort(ctx.arr, 0, ctx.arr.length-1);
       }
 
       ctx.setSortStatus(false);

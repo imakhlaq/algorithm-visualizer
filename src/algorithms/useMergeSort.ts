@@ -29,6 +29,7 @@ const useMergeSort = () => {
 
     while (i < mid) sorted.push(a[i++]);
     for (let i = 0; i < sorted.length; i++) {
+      await wait();
       a[lo++] = sorted[i];
       ctx.setIPos(lo);
     }
