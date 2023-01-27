@@ -4,11 +4,10 @@ import MyContext from "../store/MyContext";
 const useLoopEl = () => {
   const ctx = useContext(MyContext);
 
-  return () => {
+  return (timer = ctx.speed) => {
     return new Promise<void>((resolve) => {
-      console.log(ctx.speed);
-
-      setTimeout(resolve, ctx.speed / 2);
+      console.log(timer);
+      setTimeout(resolve, timer);
     });
   };
 };

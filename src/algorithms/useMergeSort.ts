@@ -26,8 +26,8 @@ const useMergeSort = () => {
     }
 
     while (i < mid) sorted.push(a[i++]);
-
     for (let i = 0; i < sorted.length; i++) {
+      ctx.setYPos(i);
       a[lo++] = sorted[i];
     }
   };
@@ -37,7 +37,8 @@ const useMergeSort = () => {
       const mid = Math.floor((low + hi) / 2);
       mergeSort(arr, low, mid);
       mergeSort(arr, mid, hi);
-      mergeSortedParts(arr, low, mid, hi);
+      await wait();
+      await mergeSortedParts(arr, low, mid, hi);
     }
   };
 

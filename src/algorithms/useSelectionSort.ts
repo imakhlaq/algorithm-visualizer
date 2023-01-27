@@ -9,11 +9,11 @@ const useSelectionSort = (arr: number[]) => {
 
   return async () => {
     for (let i = 0; i < arr.length; i++) {
-      await wait();
+      await wait(ctx.speed / 2);
       ctx.setIPos(i);
 
       for (let j = i; j < arr.length; j++) {
-        await wait();
+        await wait(ctx.speed / 2);
         ctx.setYPos(j);
 
         if (arr[i] > arr[j]) {
