@@ -58,12 +58,12 @@ const Header = () => {
   };
 
   return (
-    <header className="flex flex-col lg:flex-row justify-around mt-9 items-center md:gap-10">
+    <header className="flex flex-col lg:flex-row lg:justify-around mt-9 items-center md:gap-10">
       <div className="relative">
-        <h1 className="lg:text-4xl md:text-2xl text-xl ml-8 font-semibold max-w-full">
+        <h1 className="xl:text-3xl lg:text-2xl md:text-2xl text-2xl ml-2 lg:ml-8 font-semibold max-w-full">
           Algorithm Visualizer
         </h1>
-        <p className="absolute left-24 lg:left-56">By Akhlaq Ahmad</p>
+        <p className="absolute left-14 lg:left-50">By Akhlaq Ahmad</p>
       </div>
       <div className="space-x-8 justify-around items-center md:flex md:p-2 text-lg font-semibold hidden lg:flex">
         <button
@@ -105,7 +105,7 @@ const Header = () => {
           <button
             disabled={ctx.sortStatus}
             onClick={ShowAlgoLists}
-            className={`py-2 rounded-md text-white hover:bg-white hover:border-black hover:text-black hover:shadow-xl hover:-translate-y-2 transition-all font-semibold tracking-widest flex gap-3 justify-center items-center ${
+            className={`py-2 rounded-md text-white hover:bg-white hover:border-black hover:text-black hover:shadow-xl hover:-translate-y-2 transition-all font-semibold tracking-widest flex gap-3 justify-center items-center w-52 ${
               ctx.sortStatus && "cursor-wait hover:translate-y-0"
             }`}
           >

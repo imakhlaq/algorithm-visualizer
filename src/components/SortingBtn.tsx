@@ -48,7 +48,7 @@ const SortingBtn = () => {
       <button
         disabled={ctx.sortStatus}
         className={` bg-[#212529] border w-full p-2 text-3xl rounded-md text-white hover:bg-white hover:border-black hover:text-black hover:shadow-xl hover:-translate-y-2 transition-all font-semibold tracking-widest ${
-          ctx.sortStatus && "cursor-wait hover:translate-x-0"
+          ctx.sortStatus && "cursor-wait hover:translate-y-0"
         }`}
         onClick={clickHandler}
       >
