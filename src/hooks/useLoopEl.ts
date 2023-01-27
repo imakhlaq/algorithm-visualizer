@@ -1,4 +1,4 @@
-import { useContext, useCallback } from "react";
+import { useContext } from "react";
 import MyContext from "../store/MyContext";
 
 const useLoopEl = (speed: number) => {

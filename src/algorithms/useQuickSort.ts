@@ -26,7 +26,7 @@ const useQuickSort = () => {
     arr[i + 1] = arr[high];
     arr[high] = temp;
 
-    ctx.setIPos(i + 1);
+    ctx.setIPos(i+1);
 
     return i + 1;
   };
