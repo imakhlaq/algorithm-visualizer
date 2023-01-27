@@ -69,7 +69,9 @@ const Header = () => {
         <button
           disabled={ctx.sortStatus}
           onClick={genRandomArray}
-          className="p-2 rounded-md text-white hover:bg-white hover:border-black hover:text-black hover:shadow-xl hover:-translate-y-2 transition-all font-semibold tracking-widest"
+          className={`p-2 rounded-md text-white hover:bg-white hover:border-black hover:text-black hover:shadow-xl hover:-translate-y-2 transition-all font-semibold tracking-widest ${
+            ctx.sortStatus && "cursor-wait hover:translate-y-0"
+          }`}
         >
           Ramdomize Array
         </button>
@@ -103,7 +105,9 @@ const Header = () => {
           <button
             disabled={ctx.sortStatus}
             onClick={ShowAlgoLists}
-            className="py-2 rounded-md text-white hover:bg-white hover:border-black hover:text-black hover:shadow-xl hover:-translate-y-2 transition-all font-semibold tracking-widest flex gap-3 justify-center items-center"
+            className={`py-2 rounded-md text-white hover:bg-white hover:border-black hover:text-black hover:shadow-xl hover:-translate-y-2 transition-all font-semibold tracking-widest flex gap-3 justify-center items-center ${
+              ctx.sortStatus && "cursor-wait hover:translate-y-0"
+            }`}
           >
             {ctx.selectedAlgo}{" "}
             {showList ? <HiOutlineChevronUp /> : <HiOutlineChevronDown />}

@@ -32,7 +32,7 @@ const SortingBtn = () => {
         await mergeSort(ctx.arr, 0, ctx.arr.length);
       }
       if (ctx.selectedAlgo === "Quick Sort") {
-        await quickSort(ctx.arr, 0, ctx.arr.length-1);
+        await quickSort(ctx.arr, 0, ctx.arr.length - 1);
       }
 
       ctx.setSortStatus(false);
@@ -47,7 +47,9 @@ const SortingBtn = () => {
     <div className="container mx-auto flex justify-center mt-20 w-[22rem] items-center">
       <button
         disabled={ctx.sortStatus}
-        className="bg-[#212529] border w-full p-2 text-3xl rounded-md text-white hover:bg-white hover:border-black hover:text-black hover:shadow-xl hover:-translate-y-2 transition-all font-semibold tracking-widest"
+        className={` bg-[#212529] border w-full p-2 text-3xl rounded-md text-white hover:bg-white hover:border-black hover:text-black hover:shadow-xl hover:-translate-y-2 transition-all font-semibold tracking-widest ${
+          ctx.sortStatus && "cursor-wait hover:translate-x-0"
+        }`}
         onClick={clickHandler}
       >
         {ctx.sortStatus ? "Sorting" : "Sort"}
