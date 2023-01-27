@@ -58,13 +58,16 @@ const Header = () => {
   };
 
   return (
-    <header className="flex justify-around mt-9 items-center">
+    <header className="flex flex-col lg:flex-row justify-around mt-9 items-center md:gap-10">
       <div className="relative">
-        <h1 className="md:text-4xl text-xl ml-8">Algorithm Visualizer</h1>
-        <p className="absolute left-52">By Akhlaq Ahmad</p>
+        <h1 className="lg:text-4xl md:text-2xl text-xl ml-8 font-semibold max-w-full">
+          Algorithm Visualizer
+        </h1>
+        <p className="absolute left-24 lg:left-56">By Akhlaq Ahmad</p>
       </div>
-      <div className="flex space-x-8 justify-around items-center md:text-2xl text-xl font-semibold">
+      <div className="space-x-8 justify-around items-center md:flex md:p-2 text-lg font-semibold hidden lg:flex">
         <button
+          disabled={ctx.sortStatus}
           onClick={genRandomArray}
           className="p-2 rounded-md text-white hover:bg-white hover:border-black hover:text-black hover:shadow-xl hover:-translate-y-2 transition-all font-semibold tracking-widest"
         >
@@ -75,10 +78,10 @@ const Header = () => {
           <input
             type="range"
             id="speed"
-            min="20"
+            min="10"
             max="500"
             step="1"
-            defaultValue="20"
+            defaultValue="100"
             onChange={speedChangeHandler}
           />
         </div>
@@ -98,6 +101,7 @@ const Header = () => {
 
         <div className="cursor-pointer relative">
           <button
+            disabled={ctx.sortStatus}
             onClick={ShowAlgoLists}
             className="py-2 rounded-md text-white hover:bg-white hover:border-black hover:text-black hover:shadow-xl hover:-translate-y-2 transition-all font-semibold tracking-widest flex gap-3 justify-center items-center"
           >
@@ -121,6 +125,7 @@ const Header = () => {
           )}
         </div>
       </div>
+      <div className=" md:hidden"></div>
     </header>
   );
 };

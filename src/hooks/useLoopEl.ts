@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useCallback } from "react";
 import MyContext from "../store/MyContext";
 
 const useLoopEl = () => {
@@ -6,6 +6,8 @@ const useLoopEl = () => {
 
   return () => {
     return new Promise<void>((resolve) => {
+      console.log(ctx.speed);
+
       setTimeout(resolve, ctx.speed / 2);
     });
   };

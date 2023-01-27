@@ -13,14 +13,16 @@ const EachLine = ({ ind, ele, arr }: Props) => {
   const h = ele * 50;
 
   const windowSize = useRef(window.innerWidth);
-  let w;
+  let w: number;
   if (typeof windowSize.current === "number") {
-    w = windowSize.current / arr.length - 28;
+    w = Math.floor(windowSize.current / arr.length - 16);
   }
 
   let color = ctx.bgColor;
 
-  if (ctx.yPos + 1 == ind && ctx.yPos !== 0) {
+  if (ctx.iPos > ind) {
+    color = "#68B984";
+  } else if (ctx.yPos + 1 == ind && ctx.yPos !== 0) {
     color = "#FFD384";
   }
 
@@ -28,13 +30,11 @@ const EachLine = ({ ind, ele, arr }: Props) => {
     <div
       style={{
         height: `${h}px`,
-        width: `${w}px`,
+        width: `${w! / 16}rem`,
         backgroundColor: color,
       }}
-      className={`rounded-md`}
+      className={`rounded-md max-w-full`}
     ></div>
   );
 };
 export default EachLine;
-
-//"#F55050"
