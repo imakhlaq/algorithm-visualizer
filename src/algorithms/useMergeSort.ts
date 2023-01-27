@@ -27,18 +27,19 @@ const useMergeSort = () => {
 
     while (i < mid) sorted.push(a[i++]);
     for (let i = 0; i < sorted.length; i++) {
-      ctx.setYPos(i);
       a[lo++] = sorted[i];
+      ctx.setIPos(lo);
     }
   };
 
   const mergeSort = async (arr: number[], low: number, hi: number) => {
     if (low < hi - 1) {
       const mid = Math.floor((low + hi) / 2);
-      mergeSort(arr, low, mid);
-      mergeSort(arr, mid, hi);
+      await mergeSort(arr, low, mid);
+      await mergeSort(arr, mid, hi);
       await wait();
       await mergeSortedParts(arr, low, mid, hi);
+      await wait();
     }
   };
 
