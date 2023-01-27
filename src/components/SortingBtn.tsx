@@ -27,7 +27,7 @@ const SortingBtn = () => {
         await insertionSort();
       }
       if (ctx.selectedAlgo === "Merge Sort") {
-        await mergeSort(ctx.arr, 0, ctx.arr.length - 1);
+        await mergeSort(ctx.arr, 0, ctx.arr.length);
       }
 
       ctx.setSortStatus(false);
