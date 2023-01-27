@@ -5,15 +5,15 @@ import useLoopEl from "../hooks/useLoopEl";
 const useSelectionSort = (arr: number[]) => {
   const ctx = useContext(MyContext);
 
-  const wait = useLoopEl();
+  const wait = useLoopEl(ctx.speed / 2);
 
   return async () => {
     for (let i = 0; i < arr.length; i++) {
-      await wait(ctx.speed / 2);
+      await wait();
       ctx.setIPos(i);
 
       for (let j = i; j < arr.length; j++) {
-        await wait(ctx.speed / 2);
+        await wait();
         ctx.setYPos(j);
 
         if (arr[i] > arr[j]) {

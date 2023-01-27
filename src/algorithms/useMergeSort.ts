@@ -5,7 +5,7 @@ import useLoopEl from "../hooks/useLoopEl";
 const useMergeSort = () => {
   const ctx = useContext(MyContext);
 
-  const wait = useLoopEl();
+  const wait = useLoopEl(ctx.speed/3);
 
   const mergeSortedParts = async (
     a: number[],

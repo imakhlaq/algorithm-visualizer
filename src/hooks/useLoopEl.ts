@@ -1,14 +1,12 @@
 import { useContext, useCallback } from "react";
 import MyContext from "../store/MyContext";
 
-const useLoopEl = () => {
+const useLoopEl = (speed: number) => {
   const ctx = useContext(MyContext);
 
-  return (timer = ctx.speed) => {
+  return () => {
     return new Promise<void>((resolve) => {
-      console.log(timer);
-
-      setTimeout(resolve, timer);
+      setTimeout(resolve, speed);
     });
   };
 };

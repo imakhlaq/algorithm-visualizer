@@ -5,7 +5,7 @@ import useLoopEl from "../hooks/useLoopEl";
 const useInsertionSort = (arr: number[]) => {
   const ctx = useContext(MyContext);
 
-  const wait = useLoopEl();
+  const wait = useLoopEl(ctx.speed/2);
 
   return async () => {
     for (let i = 0; i < arr.length - 1; i++) {
