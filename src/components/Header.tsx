@@ -81,6 +81,7 @@ const Header = () => {
         <div className="space-x-2">
           <label htmlFor="speed">Speed</label>
           <input
+            style={{ direction: "rtl" }}
             type="range"
             id="speed"
             min="10"
