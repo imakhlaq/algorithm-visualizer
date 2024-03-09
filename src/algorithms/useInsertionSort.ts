@@ -1,7 +1,6 @@
 import { useContext } from "react";
 import MyContext from "../store/MyContext";
-import useLoopEl from "../hooks/waitLoop";
-import wait from "../hooks/waitLoop";
+import wait from "../libs/waitLoop";
 import { speed } from "../components/Header";
 
 const useInsertionSort = (arr: number[]) => {

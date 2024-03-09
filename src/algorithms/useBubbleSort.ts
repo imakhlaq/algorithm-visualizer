@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import MyContext from "../store/MyContext";
-import wait from "../hooks/waitLoop";
+import wait from "../libs/waitLoop";
 import { speed } from "../components/Header";
 
 const useBubbleSort = (arr: number[]) => {

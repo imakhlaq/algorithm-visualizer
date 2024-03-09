@@ -1,7 +1,6 @@
 import { useContext } from "react";
 import MyContext from "../store/MyContext";
-//import useLoopEl from "../hooks/useLoopEl";
-import wait from "../hooks/waitLoop";
+import wait from "../libs/waitLoop";
 import { speed } from "../components/Header";
 
 const useSelectionSort = (arr: number[]) => {
