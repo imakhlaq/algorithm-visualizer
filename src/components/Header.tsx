@@ -2,6 +2,8 @@ import MyContext from "../store/MyContext";
 import { useContext, useState, MouseEvent, FormEvent } from "react";
 import { HiOutlineChevronUp, HiOutlineChevronDown } from "react-icons/hi";
 
+export let speed = 0;
+
 const algos = [
   {
     name: "Selection Sort",
@@ -40,6 +42,7 @@ const Header = () => {
   };
 
   const speedChangeHandler = (event: FormEvent<HTMLInputElement>) => {
+    speed = +event.currentTarget.value;
     ctx.setSpeed(+event.currentTarget.value);
   };
   const sizeChangeHandler = (event: FormEvent<HTMLInputElement>) => {
@@ -51,8 +54,8 @@ const Header = () => {
     ctx.setArr(
       Array.from(
         { length: Math.floor(Math.random() * 50) + 5 },
-        () => Math.floor(Math.random() * 10) + 1
-      )
+        () => Math.floor(Math.random() * 10) + 1,
+      ),
     );
     ctx.setSortStatus(false);
   };

@@ -1,19 +1,21 @@
 import { useContext } from "react";
 import MyContext from "../store/MyContext";
-import useLoopEl from "../hooks/useLoopEl";
+//import useLoopEl from "../hooks/useLoopEl";
+import wait from "../hooks/waitLoop";
+import { speed } from "../components/Header";
 
 const useSelectionSort = (arr: number[]) => {
   const ctx = useContext(MyContext);
 
-  const wait = useLoopEl(ctx.speed / 2);
+  //const wait = useLoopEl();
 
   return async () => {
     for (let i = 0; i < arr.length; i++) {
-      await wait();
+      await wait(speed);
       ctx.setIPos(i);
 
       for (let j = i; j < arr.length; j++) {
-        await wait();
+        await wait(speed);
         ctx.setYPos(j);
 
         if (arr[i] > arr[j]) {

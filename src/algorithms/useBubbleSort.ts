@@ -1,19 +1,18 @@
 import { useContext } from "react";
 import MyContext from "../store/MyContext";
-import useLoopEl from "../hooks/useLoopEl";
+import wait from "../hooks/waitLoop";
+import { speed } from "../components/Header";
 
 const useBubbleSort = (arr: number[]) => {
   const ctx = useContext(MyContext);
 
-  const wait = useLoopEl(ctx.speed/2);
-
   return async () => {
     for (let i = 0; i < arr.length - 1; i++) {
-      await wait();
+      await wait(speed);
       ctx.setIPos(i);
 
       for (let j = 0; j < arr.length - i - 1; j++) {
-        await wait();
+        await wait(speed);
         ctx.setYPos(j);
 
         if (arr[j + 1] < arr[j]) {

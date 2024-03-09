@@ -1,10 +1,10 @@
 import { useContext } from "react";
 import MyContext from "../store/MyContext";
-import useLoopEl from "../hooks/useLoopEl";
+import wait from "../hooks/waitLoop";
+import { speed } from "../components/Header";
 
 const useQuickSort = () => {
   const ctx = useContext(MyContext);
-  const wait = useLoopEl(ctx.speed / 3);
 
   const partition = async (arr: number[], low: number, high: number) => {
     // pivot
@@ -13,7 +13,7 @@ const useQuickSort = () => {
     let i = low - 1;
 
     for (let j = low; j <= high - 1; j++) {
-      await wait();
+      await wait(speed);
       ctx.setYPos(j);
       if (arr[j] < pivot) {
         i++;
@@ -26,7 +26,7 @@ const useQuickSort = () => {
     arr[i + 1] = arr[high];
     arr[high] = temp;
 
-    ctx.setIPos(i+1);
+    ctx.setIPos(i + 1);
 
     return i + 1;
   };
@@ -34,11 +34,11 @@ const useQuickSort = () => {
   const quickSort = async (arr: number[], low: number, high: number) => {
     if (low < high) {
       let pi = await partition(arr, low, high);
-      await wait();
+      await wait(speed);
       await quickSort(arr, low, pi - 1);
-      await wait();
+      await wait(speed);
       await quickSort(arr, pi + 1, high);
-      await wait();
+      await wait(speed);
     }
   };
 
